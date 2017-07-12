@@ -1,0 +1,64 @@
+<form [formGroup]="registerForm">
+  <table>
+    <tr>
+      <td><label for="fname">First Name :</label></td>
+      <td><input type="text" name="fname" formControlName="fname"></td>
+    </tr>
+    <tr>
+      <td><label for="lname">Last Name :</label></td>
+      <td><input type="text" name="lname" formControlName="lname"></td>
+    </tr>
+    <tr>
+      <td><label for="email">Email :</label></td>
+      <td><input type="email" name="email" formControlName="email"></td>
+    </tr>
+    <tr>
+      <td><label for="password">Password :</label></td>
+      <td><input type="password" name="password" formControlName="password"></td>
+    </tr>
+    <tr>
+      <td><label for="cpassword">Conform Password :</label></td>
+      <td><input type="password" name="cpassword" formControlName="cpassword"></td>
+    </tr>
+    <tr>
+      <td><label for="bdate">Birth Date :</label></td>
+      <td><input type="date" name="bdate" formControlName="bdate"></td>
+    </tr>
+    <tr>
+      <td><label for="fdate">Flat Purchase Date :</label></td>
+      <td><input type="date" name="fdate" formControlName="fdate"></td>
+    </tr>
+    <tr>
+      <td><label for="acondition">Agree to terms and condition :</label></td>
+      <td><input type="checkbox" name="acondition" formControlName="acondition"></td>
+    </tr>
+    <tr>
+      <td><label for="block">Flat Block :</label></td>
+      <td>
+        <select name="block" formControlName="block">
+          <option value="">Select Block</option>
+          <option *ngFor="let block of blockList" [value]="block">{{block}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="fnumber">Flat Number :</label></td>
+      <td>
+        <select name="fnumber" formControlName="fnumber">
+          <option value="">Select Number</option>
+          <option *ngFor="let flat of flatList" [value]="flat">{{flat}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="mnumber">Mobile Number :</label></td>
+      <td><input type="text" name="mnumber" formControlName="mnumber"></td>
+    </tr>
+    <tr>
+      <td>
+        <input type="submit" name="register" (click)="registerUser()" value="Register">        
+      </td>
+    </tr>
+  </table>
+</form>
+<div style="color:red;">{{errorMessage}}</div>
